@@ -41,7 +41,7 @@ public class CustomTabsAuthenticator {
         CustomTabsIntent intent = builder.build();
         final Uri uri =  Uri.parse(authenticator.initialUrl);
 
-        intent.intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_NO_HISTORY | Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
         Intent keepAliveIntent = new Intent().setClassName(
                 activity.getPackageName(), KeepAliveService.class.getCanonicalName());
         intent.intent.putExtra("android.support.customtabs.extra.KEEP_ALIVE", keepAliveIntent);
